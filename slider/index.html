@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slide</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/responsiveslides.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="framwork/jquery-1.9.1/jquery.min.js"></script>
+    <script src="framwork/responsiveslides.min.js"></script>
+    <script>
+        $(function () {
+            $("#slider1").responsiveSlides({
+                auto: true,
+                pager: true,
+                speed: 700,
+                maxwidth: 980,
+                nav:true,
+            });
+            $("#down").click(function () {
+                    var flag=1;
+                    if(flag==1){
+                        move(-200*flag);
+                        $("#down").click(function () {
+                            flag++;
+                            move(-200*flag);
+                        })
+                    }
+            });
+            $("#up").click(function () {
+                var flag=1;
+                if(flag==1){
+                    move(-200*flag);
+                    $("#down").click(function () {
+                        flag++;
+                        move(-200*flag);
+                    })
+                }
+            });
+            function move(pos) {
+                var nowPos=parseInt($("#right_slider").css("top"),10);
+                var speed=60;
+                if(Math.abs(nowPos-pos)<speed){
+                    nowPos -=((nowPos-pos)/Math.abs(nowPos-pos))*speed;
+                    $("#right_slider").css("top",nowPos+"px");
+                }else{
+                    $("#right_slider").css("top",pos+"px");
+               }
+          }
+        });
+
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="center">
+            <header>
+                <div class="wrapper row">
+                    <h1><a href="index.html" id="logo"><img src="images/logo.png" /></a></h1>
+                    <nav>
+                        <ul id="menu">
+                            <li id="nav1" class="active"><a href="">Home<span>Welcome!</span></a></li>
+                            <li id="nav2"><a href="">News<span>Fresh</span></a></li>
+                            <li id="nav3"><a href="">Services<span>for you</span></a></li>
+                            <li id="nav4"><a href="">Products<span>The best</span></a></li>
+                            <li id="nav5"><a href="">Contacts<span>Our Address</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+        </div>
+    </div>
+    <!--banner-->
+    <div class="banner" id="wrapper">
+        <div class="center">
+            <ul class="rslides" id="slider1">
+                <li><img src="images/img1.jpg" alt=""></li>
+                <li><img src="images/img2.jpg" alt=""></li>
+                <li><img src="images/img3.jpg" alt=""></li>
+                <li><img src="images/img4.jpg" alt=""></li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <div class="center">
+            <ul>
+                <li><h2><span class="dropcap">A</span>Business<span>planning</span></h2>
+                    <p class="pad_bot1">Progress is one of <a href="http://blog.templatemonster.com/free-website-templates/" target="_blank">free website templates</a> created by TemplateMonster.com, optimized for 1024x768 res.</p>
+                    <a href="#" class="link1">Read More</a></li>
+                <li><h2><span class="dropcap">A</span>Business<span>planning</span></h2>
+                    <p class="pad_bot1">Progress is one of <a href="http://blog.templatemonster.com/free-website-templates/" target="_blank">free website templates</a> created by TemplateMonster.com, optimized for 1024x768 res.</p>
+                    <a href="#" class="link1">Read More</a></li>
+                <li><h2><span class="dropcap">A</span>Business<span>planning</span></h2>
+                    <p class="pad_bot1">Progress is one of <a href="http://blog.templatemonster.com/free-website-templates/" target="_blank">free website templates</a> created by TemplateMonster.com, optimized for 1024x768 res.</p>
+                    <a href="#" class="link1">Read More</a></li>
+                <li><h2><span class="dropcap">A</span>Business<span>planning</span></h2>
+                    <p class="pad_bot1">Progress is one of <a href="http://blog.templatemonster.com/free-website-templates/" target="_blank">free website templates</a> created by TemplateMonster.com, optimized for 1024x768 res.</p>
+                    <a href="#" class="link1">Read More</a></li>
+            </ul>
+        </div>
+    </div>
+    <article class="center">
+        <section>
+            <article class="left">
+                <h2>Welcome,dear visitor!</h2>
+                <div>
+                    <img src="images/page1_img1.jpg" alt="">
+                    <div class="descript">
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa.</p>
+                        <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <section>
+            <article class="right">
+                    <h2>Testimonials</h2>
+                    <div class="testimonials">
+                        <div id="testimonials">
+                            <ul id="right_slider">
+                                <li>
+                                    <div style="background-color: #aa1111">
+                                        “Nam libero tempore, cum soluta nobis eligendi quo minus quod maxime placeat facere.”
+                                    </div>
+                                    <span><strong class="color1">James Coloway,</strong> <br>
+									Director</span>
+                                </li>
+                                <li>
+                                    <div style="background-color: #00a2d4">
+                                        “Nam libero tempore, cum soluta nobis eligendi quo minus quod maxime placeat facere.”
+                                    </div>
+                                    <span><strong class="color1">James Aoloway,</strong> <br>
+									Director</span>
+                                </li>
+                                <li>
+                                    <div style="background-color: #00ff00">
+                                        “Nam libero tempore, cum soluta nobis eligendi quo minus quod maxime placeat facere.”
+                                    </div>
+                                    <span><strong class="color1">James Boloway,</strong> <br>
+									Director</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <p  id="up">1</p>
+                        <p  id="down">2</p>
+                    </div>
+            </article>
+        </section>
+    </article>
+</body>
+</html>
